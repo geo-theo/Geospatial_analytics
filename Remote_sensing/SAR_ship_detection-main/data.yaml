@@ -1,0 +1,5 @@
+path: /Users/theo/Documents/GIS_portfolio/SAR_ship_detection/python_ml_training/output
+train: train/images
+val: val/images
+names: ["non-ship", "ship"]
+nc: 2

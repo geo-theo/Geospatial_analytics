@@ -1,0 +1,11 @@
+% program   : ES 1.9
+% inp file  : C:\Users\theoj\OneDrive - The University of Montana\Documents\UMT\Courses\FORS491\Lab 5\Data\GNSS\Plot194\ReachRover__raw_20250922202527_RINEX_3_02\ReachRover__raw_20250922202527.25O
+% inp file  : C:\Users\theoj\OneDrive - The University of Montana\Documents\UMT\Courses\FORS491\Lab 5\Data\GNSS\mtum265\mtum2650.25n
+% inp file  : C:\Users\theoj\OneDrive - The University of Montana\Documents\UMT\Courses\FORS491\Lab 5\Data\GNSS\mtum265\mtum2650.25o
+% obs start : 2025/09/22 20:25:45.4 GPST (week2385 159945.4s)
+% obs end   : 2025/09/22 21:48:21.0 GPST (week2385 164901.0s)
+% ref pos   : 46.950022944-113.472395035 1122.7775
+%
+% (lat/lon/height=WGS84/ellipsoidal,Q=1:fix,2:float,3:sbas,4:dgps,5:single,6:ppp,ns=# of satellites)
+%  GPST                  latitude(deg) longitude(deg)  height(m)   Q  ns   sdn(m)   sde(m)   sdu(m)  sdne(m)  sdeu(m)  sdun(m) age(s)  ratio
+2025/09/22 20:25:45.395   46.895783985 -113.447968421  1248.1030   1   7   0.0001   0.0000   0.0001   0.0000   0.0000   0.0000   0.00    7.7
