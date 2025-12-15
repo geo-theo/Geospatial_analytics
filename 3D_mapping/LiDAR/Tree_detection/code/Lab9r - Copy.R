@@ -1,8 +1,8 @@
 #options("install.lock"=FALSE)
-install.packages("lidR")
-install.packages("terra")
-install.packages("RCSF")
-install.packages("mapview")
+#install.packages("lidR")
+#install.packages("terra")
+#install.packages("RCSF")
+#install.packages("mapview")
 #setwd("C:/Users/theoj/OneDrive - The University of Montana/Documents/UMT/Courses/FORS491/")
 
 library(lidR)
@@ -128,30 +128,6 @@ ttops194 <- locate_trees(dDAP194chm, lmf(f))
 Tops <- plot(dDAP194normC, bg = "white", size = 2)
 add_treetops3d(Tops, ttops194)
 
-ttops194tls <- locate_trees(TLS194chm, lmf(ws = 2, hmin = 2, shape = "circular")) 
-plot(TLS194chm, col = height.colors(30)) 
-plot(sf::st_geometry(ttops194tls), add = TRUE, col = "black", cex = 1, pch = 1)
-f <- function(x) { x * 0.05 + 2} 
-ttops194tls <- locate_trees(TLS194chm, lmf(f))
-Tops194tls <- plot(TLS194norm, bg = "white", size = 2)
-add_treetops3d(Tops194tls, ttops194tls)
-
-ttops202 <- locate_trees(dDAP202chm, lmf(ws = 2, hmin = 2, shape = "circular")) 
-plot(dDAP202chm, col = height.colors(30)) 
-plot(sf::st_geometry(ttops202), add = TRUE, col = "black", cex = 1, pch = 1)
-f <- function(x) { x * 0.05 + 2} 
-ttops202 <- locate_trees(dDAP202chm, lmf(f))
-Tops202 <- plot(dDAP202normC, bg = "white", size = 2)
-add_treetops3d(Tops202, ttops202)
-
-ttops202tls <- locate_trees(TLS202chm, lmf(ws = 2, hmin = 2, shape = "circular")) 
-plot(TLS202chm, col = height.colors(30)) 
-plot(sf::st_geometry(ttops202tls), add = TRUE, col = "black", cex = 1, pch = 1)
-f <- function(x) { x * 0.05 + 2} 
-ttops202tls <- locate_trees(TLS202chm, lmf(f))
-Tops202tls <- plot(TLS202norm, bg = "white", size = 2)
-add_treetops3d(Tops202tls, ttops202tls)
-
 #TLS194norm <- readLAS  ("Lab 9/Data/TLS_194_6514_norm_ground.laz")   
 #TLS202norm <- readLAS  ("Lab 9/Data/TLS_202_6514_norm_ground.laz")  
 #dDAP194normC <- readLAS("Lab 9/Data/dDAP194normC.laz") 
@@ -166,14 +142,8 @@ add_treetops3d(Tops202tls, ttops202tls)
 dDAP194normC_treeID <- segment_trees(dDAP194normC, silva2016(dDAP194chm, ttops194))
 plot(dDAP194normC_treeID, color = "treeID")
 
-TLS194norm_treeID <- segment_trees(TLS194norm, silva2016(TLS194chm, ttops194tls))
-plot(TLS194norm_treeID, color = "treeID")
-
-dDAP202normC_treeID <- segment_trees(dDAP202normC, silva2016(dDAP202chm, ttops202))
+dDAP194normC_treeID <- segment_trees(dDAP194normC, silva2016(dDAP194chm, ttops194))
 plot(dDAP194normC_treeID, color = "treeID")
-
-TLS202norm_treeID <- segment_trees(TLS202norm, silva2016(TLS202chm, ttops202tls))
-plot(TLS202norm_treeID, color = "treeID")
 
 # full code from loading norm data to outputting laz with colorized treeID:
 '''
@@ -187,9 +157,9 @@ writeLAS(dDAP194normC, "Lab 9/dDAP194normC_treeIDcolor.laz")
 '''
 
 ##### Question 13 #####
-tree24 <- filter_poi(dDAP194normC_treeID, treeID == 24)
+tree24 <- filter_poi(dDAP194normC, treeID == 24)
 plot(tree24, size = 5, bg="white")
-crowns <- crown_metrics(dDAP194normC_treeID, func = .stdtreemetrics, geom = "convex")
+crowns <- crown_metrics(dDAP194normC, func = .stdtreemetrics, geom = "convex")
 summary(crowns)
 plot(crowns["convhull_area"], main = "Crown Area (convex hull)")
 
