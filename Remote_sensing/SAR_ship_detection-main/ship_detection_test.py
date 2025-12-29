@@ -26,7 +26,7 @@ import torchvision.transforms as transforms
 
 #####
 
-# %matplotlib inline
+%matplotlib inline
 
 #####
 
