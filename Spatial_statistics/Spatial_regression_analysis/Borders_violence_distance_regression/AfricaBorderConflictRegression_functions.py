@@ -1,3 +1,5 @@
+# Functions to use in Africa borders violence regression analysis
+
 ####################
 ### pip installs ###
 ####################
