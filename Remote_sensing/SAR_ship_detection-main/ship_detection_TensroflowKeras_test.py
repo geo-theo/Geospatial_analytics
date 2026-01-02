@@ -1,4 +1,6 @@
+########################################
 # Ship Detection with TensorFlow Keras #
+########################################
 
 def image_batch_generators(
     train_df, dev_df, target_size=(256, 256), input_dir="../../datasets/satellite_ships"
